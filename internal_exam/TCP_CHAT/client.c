@@ -27,6 +27,7 @@ int main(){
 
   printf("client : ");
   fgets(buffer, BUFFER_SIZE, stdin);
+  // Instead of next two lines it is also possible to use `scanf("%s", buffer)` , the program will not be able to take white spaces in inputs with scanf
   buffer[strcspn(buffer, "\n")] = 0; // Remove newline character
   send(client,buffer,strlen(buffer),0);
 
