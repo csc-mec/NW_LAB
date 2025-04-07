@@ -26,7 +26,8 @@ int main(){
 
 
   printf("client : ");
-  scanf("%s",buffer);
+  fgets(buffer, BUFFER_SIZE, stdin);
+  buffer[strcspn(buffer, "\n")] = 0; // Remove newline character
   send(client,buffer,strlen(buffer),0);
 
 
