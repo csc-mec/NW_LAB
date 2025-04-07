@@ -11,7 +11,6 @@ int main(){
   int client;
   char buffer[BUFFER_SIZE];
   struct sockaddr_in server_addr;
-  struct sockaddr_storage store;
 
   socklen_t addr_size;
 
