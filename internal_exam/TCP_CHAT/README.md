@@ -6,4 +6,4 @@
 ### Issues
 
 - can only send in order one message each for client and server 
-- cannot handle blankspace might be solved by using `fgets()` instead of `scanf()`
+- ~cannot handle blankspace might be solved by using `fgets()` instead of `scanf()`~ fixed
