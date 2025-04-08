@@ -11,7 +11,6 @@ int main(){
   int client;
   char buffer[BUFFER_SIZE];
   struct sockaddr_in server_addr;
-  struct sockaddr_storage store;
 
   socklen_t addr_size;
 
@@ -26,7 +25,9 @@ int main(){
 
 
   printf("client : ");
-  scanf("%s",buffer);
+  fgets(buffer, BUFFER_SIZE, stdin);
+  // Instead of next two lines it is also possible to use `scanf("%s", buffer)` , the program will not be able to take white spaces in inputs with scanf
+  buffer[strcspn(buffer, "\n")] = 0; // Remove newline character
   send(client,buffer,strlen(buffer),0);
 
 
@@ -41,7 +42,8 @@ int main(){
       }
       memset(buffer, 0, BUFFER_SIZE);
       printf("client : ");
-      scanf("%s",buffer);
+      fgets(buffer, BUFFER_SIZE, stdin);
+      buffer[strcspn(buffer, "\n")] = 0; // Remove newline character
       send(client, buffer, strlen(buffer), 0);
   }
 

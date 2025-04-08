@@ -38,7 +38,7 @@ int main(){
         }
         memset(buffer, 0, BUFFER_SIZE); //memset clears the buffer
         printf("server : ");
-        scanf("%s",buffer);
+        fgets(buffer, BUFFER_SIZE, stdin);
         send(client, buffer, strlen(buffer), 0);
         memset(buffer, 0, BUFFER_SIZE);
         recv(client, buffer, BUFFER_SIZE, 0);
