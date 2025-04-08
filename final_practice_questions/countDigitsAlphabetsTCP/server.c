@@ -36,9 +36,9 @@ int main(){
     len=sizeof(client);
     newfd=accept(sockfd,(struct sockaddr*)&client,&len);
 
-    printf("Enter message:");
-    fgets(buffer,BUFFER_SIZE,stdin);
-    send(newfd,buffer,BUFFER_SIZE,0);
+    // printf("Enter message:");
+    // fgets(buffer,BUFFER_SIZE,stdin);
+
     memset(buffer,0,BUFFER_SIZE);
     read(newfd,buffer,BUFFER_SIZE);
     for(int i=0;buffer[i]!='\0';i++){
@@ -49,7 +49,8 @@ int main(){
             num++;
         }
     }
-
+    sprintf(buffer,"Output Obtained\n%d - Numbers\n%d - Alphabets",num,alp);
+    send(newfd,buffer,BUFFER_SIZE,0);
     printf("Client:%s\n",buffer);
     printf("Numbers:%d\n",num);
     printf("Alphabets:%d\n",alp);
