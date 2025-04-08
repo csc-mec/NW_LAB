@@ -26,12 +26,13 @@ int main(){
         perror("No connection done\n");
         exit(0);
     }
-    read(sockfd,buffer,BUFFER_SIZE);
-    printf("Server:%s\n",buffer);
+
     memset(buffer,0,BUFFER_SIZE);
     printf("Enter the string:");
     fgets(buffer,BUFFER_SIZE,stdin);
     send(sockfd,buffer,strlen(buffer),0);
+    read(sockfd,buffer,BUFFER_SIZE);
+    printf("Server:%s\n",buffer);
 
     close(sockfd);
 }
