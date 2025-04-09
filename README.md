@@ -12,6 +12,7 @@
   - [Go Back N](https://github.com/csc-mec/NW_LAB/tree/main/ARQ/GoBackN)
 
 - [File Transfer Protocol](https://github.com/csc-mec/NW_LAB/tree/main/FTP)
+- [Distance Vector Routing](https://github.com/csc-mec/NW_LAB/tree/main/DVR)
 
 
 ### Questions asked on Internal Lab Exam
